@@ -1,0 +1,147 @@
+/************** RESET ********************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/***************** PAGE STYLES **************************/
+
+body { background-color:#333; color: #333; font-family: helvetica, sans-serif; font-size: 13px;line-height: 1.4; }
+img { display:block;}
+h1 {font-weight: normal;font-size: 2em;color:#000;}
+div.info { background-color:#333; color:#eee; padding:20px;}
+a { color: #888; text-decoration: none; }
+.audio {position:fixed; left:0;top:0;width:100%;z-index:10;}
+#wrapper { margin: 20px auto;padding-top:30px;}
+.image-wrap, .feed-info, .subscribe {float:left;}
+.image-wrap {width:200px;margin-right:20px;}
+.feed-info {width:400px;margin-right:20px;}
+.subscribe {width:260px;}
+p {margin-top: 1.4em;max-width:600px;}
+ul.subscribe li {border-bottom: #666 1px dotted; padding: .5em 0 .5em 0; background-position: 0 6px; background-repeat: no-repeat;}
+div.footer { font-size:10px; color: #999;}
+p.date { font-size:10px; color: #999;}
+p.author { color: #999;}
+
+
+/* Social Media Icons: http://paulrobertlloyd.com/2009/06/social_media_icons/ */
+ul.subscribe li a {padding-left:20px;}
+li.feed-icon {background-image: url(feed.png);}
+li.itunes-icon {background-image: url(itunes.png);}
+li.google-icon {background-image: url(google.png);}
+
+/************************************************************************************
+
+AUDIO PLAYER PLAYLIST
+
+*************************************************************************************/	      
+ol { padding: 0px; margin: 0px; list-style: decimal-leading-zero inside; color: #666;  border-top: 1px solid #222; font-size: 0.9em; }
+ol li { position: relative; margin: 0px; padding: 10px 10px 10px 20px; border-bottom: 1px solid #222; cursor: pointer; }
+ol li a { display: block; text-indent: -3.3ex; padding: 0px 0px 0px 20px; }
+li.playing { background-color:#444; color: #fff; border-top:5px #222 solid; }
+li.playing a { color: #ccc; }
+   
+ol li div.description { visibility:hidden; height:0px;width:0;position:absolute;top:0left:-10000px;}
+ol li.playing div.description { visibility:visible; height:auto;width:auto;position:static;border-top:#666 1px dotted;margin-top:1em;padding-left:40px;}
+
+@media screen and (max-width: 930px) {
+	ol li.playing, ol li { padding: 10px;}
+	.feed-info, .subscribe {margin-top:1em;width:100%;}
+	.image-wrap {width:50px;margin-right:10px;}
+	.image-wrap img {max-width:50px;}
+}
+
+/************************************************************************************
+
+IMAGE STYLES (webdesignerwall.com/tutorials/css3-image-styles-part-2)
+
+*************************************************************************************/
+
+.image-wrap {
+	position: relative;
+	display: inline-block;
+	max-width: 100%;
+	vertical-align: bottom;
+}
+
+/* image-wrap:after pseudo element (overlaying container) */
+
+.image-wrap:after {
+	content: ' ';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	border: solid 1px #1b1b1b;
+	-wekbit-box-shadow: inset 0 0 1px rgba(255,255,255,.4), inset 0 1px 0 rgba(255,255,255,.4), 0 1px 2px rgba(0,0,0,.3);
+	-moz-box-shadow: inset 0 0 1px rgba(255,255,255,.4), inset 0 1px 0 rgba(255,255,255,.4), 0 1px 2px rgba(0,0,0,.3);
+	box-shadow: inset 0 0 1px rgba(255,255,255,.4), inset 0 1px 0 rgba(255,255,255,.4), 0 1px 2px rgba(0,0,0,.3);
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+.image-wrap img {
+	max-width:200px;
+	vertical-align: bottom;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.4);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.4);
+	box-shadow: 0 1px 2px rgba(0,0,0,.4);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+	      	      
+/* cutout or pressed */
+
+.cutout .image-wrap:after {
+	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.2), inset 0 4px 5px rgba(0,0,0,.6), inset 0 1px 2px rgba(0,0,0,.6);
+	-moz-box-shadow: 0 1px 0 rgba(255,255,255,.2), inset 0 4px 5px rgba(0,0,0,.6), inset 0 1px 2px rgba(0,0,0,.6);
+	box-shadow: 0 1px 0 rgba(255,255,255,.2), inset 0 4px 5px rgba(0,0,0,.6), inset 0 1px 2px rgba(0,0,0,.6);
+}
